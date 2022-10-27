@@ -8,7 +8,6 @@ export type MessagePropsType = {
 
 }
 
-
 // нужно отобразить приходящие данные
 const Message = (props: MessagePropsType) => {
     return (
