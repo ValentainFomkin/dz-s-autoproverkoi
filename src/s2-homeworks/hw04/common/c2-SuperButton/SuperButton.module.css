@@ -1,4 +1,7 @@
 .button {
+    width: 132px;
+    height: 30px;
+
 }
 
 .disabled {
@@ -8,9 +11,12 @@
 }
 
 .default {
+    background: #0066CC;
+
 }
 
 .red {
+    background-color: #cc0000;
 }
 
 .default:hover {
