@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import s from './Stand.module.css'
 import SuperInputText from './common/c1-SuperInputText/SuperInputText'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
@@ -45,6 +45,7 @@ const Stand = () => {
                 <div>
                     <SuperButton id={'hw4-super-button-default'}>
                         default
+                      
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
