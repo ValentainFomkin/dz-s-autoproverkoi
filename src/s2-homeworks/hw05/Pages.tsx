@@ -6,9 +6,9 @@ import JuniorPlus from "./pages/JuniorPlus";
 import Error404 from "./pages/Error404";
 
 export const PATH = {
-    PRE_JUNIOR: '/pre-junior',
+    PRE_JUNIOR: '/pre_junior',
     JUNIOR: '/junior',
-    JUNIOR_PLUS: '/junior-plus',
+    JUNIOR_PLUS: '/junior_plus',
 }
 
 function Pages() {
