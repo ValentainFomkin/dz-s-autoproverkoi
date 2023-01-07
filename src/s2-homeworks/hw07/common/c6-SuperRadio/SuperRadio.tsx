@@ -38,7 +38,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
         ? options.map((o) => (
             <label key={o.id} className={s.label}>
                 <input
-                    id={'-input-' + o.id}
+                    id={id + '-input-' + o.id}
                     className={finalRadioClassName}
                     type={'radio'}
                     // name, checked, value делают студенты
