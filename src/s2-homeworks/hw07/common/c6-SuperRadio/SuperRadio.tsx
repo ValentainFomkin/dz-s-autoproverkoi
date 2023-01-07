@@ -36,14 +36,14 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 
     const mappedOptions: any[] = options
         ? options.map((o) => (
-            <label key={name + '-' + o.id} className={s.label}>
+            <label key={o.id} className={s.label}>
                 <input
-                    id={id + '-input-' + o.id}
+                    id={'-input-' + o.id}
                     className={finalRadioClassName}
                     type={'radio'}
                     // name, checked, value делают студенты
                     name={name}
-                    checked={o === value}
+                    checked={value == o.id}
                     value={o.id}
                     onChange={onChangeCallback}
                     {...restProps}
