@@ -17,7 +17,7 @@ const initialPeople: UserType[] = [
 export const homeWorkReducer = (state = initialPeople, action: ActionType): any => { // need to fix any
     switch (action.type) {
         case 'sort': { // by name
-            let newState = state
+            let newState = [...state]
             if (action.payload === 'up') {
                 return newState.sort(function (a, b) {
                     let nameA = a.name.toLowerCase()
