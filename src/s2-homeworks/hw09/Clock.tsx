@@ -41,11 +41,11 @@ function Clock() {
         month: 'numeric',
         year: 'numeric'
     })
-    let formatterDay = new Intl.DateTimeFormat('ru', {
+    let formatterDay = new Intl.DateTimeFormat('en', {
         day: 'numeric'
     })
-    let formatterMonth = new Intl.DateTimeFormat('ru', {
-        month: 'numeric'
+    let formatterMonth = new Intl.DateTimeFormat('en', {
+        month: 'long'
     })
 
     const stringTime = formatterTime.format(date) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
