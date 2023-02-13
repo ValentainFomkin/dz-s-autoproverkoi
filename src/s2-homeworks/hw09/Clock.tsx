@@ -10,6 +10,7 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
+        stop()
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
         let id: number = +setInterval(() => {
@@ -29,13 +30,29 @@ function Clock() {
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
         setShow(false)
     }
+    let formatterTime = new Intl.DateTimeFormat('ru', {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    })
+    let formatterDate = new Intl.DateTimeFormat('ru', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric'
+    })
+    let formatterDay = new Intl.DateTimeFormat('ru', {
+        day: 'numeric'
+    })
+    let formatterMonth = new Intl.DateTimeFormat('ru', {
+        month: 'numeric'
+    })
 
-    const stringTime = date?.toLocaleTimeString() || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = date?.toLocaleDateString() || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringTime = formatterTime.format(date) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = formatterDate.format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = date?.toLocaleDateString() || <br/> // пишут студенты
-    const stringMonth = date?.getMonth().toString() || <br/> // пишут студенты
+    const stringDay = formatterDay.format(date) || <br/> // пишут студенты
+    const stringMonth = formatterMonth.format(date) || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
