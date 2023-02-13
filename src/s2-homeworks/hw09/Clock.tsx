@@ -6,7 +6,7 @@ import s from './Clock.module.css'
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
-    const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
+    const [date, setDate] = useState<Date>(new Date(restoreState('#hw9-date', Date.now())))
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
@@ -75,7 +75,7 @@ function Clock() {
                     {show ? (
                         <>
                             <span id={'hw9-month'}>{stringMonth}</span>,{' '}
-                            <span id={'hw9-date'}>{stringDate}</span>
+                            <span id={'#hw9-date'}>{stringDate}</span>
                         </>
                     ) : (
                         <>
