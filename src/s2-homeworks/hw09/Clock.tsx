@@ -6,7 +6,7 @@ import s from './Clock.module.css'
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
-    const [date, setDate] = useState<Date>(new Date(restoreState('#hw9-date', Date.now())))
+    const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
@@ -36,16 +36,11 @@ function Clock() {
         minute: 'numeric',
         second: 'numeric'
     })
-    let formatterDate = new Intl.DateTimeFormat('ru', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-
-    })
-    let formatterDay = new Intl.DateTimeFormat('en', {
+    let formatterDate = new Intl.DateTimeFormat('ru')
+    let formatterDay = new Intl.DateTimeFormat('en-US', {
         weekday: 'long'
     })
-    let formatterMonth = new Intl.DateTimeFormat('en', {
+    let formatterMonth = new Intl.DateTimeFormat('en-US', {
         month: 'long'
     })
 
@@ -74,8 +69,8 @@ function Clock() {
                 <div className={s.more}>
                     {show ? (
                         <>
-                            <span id={'#hw9-month'}>{stringMonth}</span>,{' '}
-                            <span id={'#hw9-date'}>{stringDate}</span>
+                            <span id={'hw9-month'}>{stringMonth}</span>,{' '}
+                            <span id={'hw9-date'}>{stringDate}</span>
                         </>
                     ) : (
                         <>
