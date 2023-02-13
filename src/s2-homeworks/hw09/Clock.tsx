@@ -10,10 +10,10 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
-        stop()
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-        let id: number = +setInterval(() => {
+        stop()
+        const id: number = +setInterval(() => {
             setDate(new Date())
         }, 1000)
         setTimerId(id)
@@ -22,7 +22,7 @@ function Clock() {
     const stop = () => {
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
         clearInterval(timerId)
-        setTimerId(0)
+        setTimerId(undefined)
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
@@ -32,29 +32,19 @@ function Clock() {
         setShow(false)
     }
 
-
-    const stringTime = new Intl.DateTimeFormat('ru', {
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric'
+    const stringTime = new Intl.DateTimeFormat("ru", {
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric"
     }).format(date) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-
-    
-    const stringDate = new Intl.DateTimeFormat('ru').format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = new Intl.DateTimeFormat("ru").format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = new Intl.DateTimeFormat('en-US', {
-        weekday: 'long'
-    }).format(date) || <br/> // пишут студенты
-
-
-    const stringMonth = new Intl.DateTimeFormat('en-US', {
-        month: 'long'
-    }).format(date) || <br/> // пишут студенты
+    const stringDay = new Intl.DateTimeFormat("en-US", {weekday: "long"}).format(date) || <br/> // пишут студенты
+    const stringMonth = new Intl.DateTimeFormat("en-US", {month: "long"}).format(date) || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
-
             <div
                 id={'hw9-watch'}
                 className={s.watch}
@@ -66,6 +56,7 @@ function Clock() {
                     <strong>{stringTime}</strong>
                 </span>
             </div>
+
             <div id={'hw9-more'}>
                 <div className={s.more}>
                     {show ? (
@@ -100,5 +91,3 @@ function Clock() {
         </div>
     )
 }
-
-export default Clock
