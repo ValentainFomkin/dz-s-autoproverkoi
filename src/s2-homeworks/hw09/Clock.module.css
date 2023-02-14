@@ -12,3 +12,26 @@
 
 .more {
 }
+
+.start {
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #bbffbb;
+    border: 1px solid #000000;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #445006;
+}
+
+.stop {
+    width: 100px;
+    height: 30px;
+    background-color: #bbffbb;
+    border: 1px solid #000000;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #445006;
+}
