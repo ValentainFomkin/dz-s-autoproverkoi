@@ -1,3 +1,8 @@
 .loader {
     /*свг и/или анимация*/
+    border: 1px solid #0066cc;
+    width: 90px;
+    height: 90px;
+    background: conic-gradient(from 90deg at 50% 50%, rgba(255, 255, 255, 0) 0deg, #512DE4 360deg);
+    border-radius: 50%;
 }
