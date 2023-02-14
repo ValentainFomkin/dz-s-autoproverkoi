@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import {restoreState} from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
 
@@ -72,22 +73,20 @@ function Clock() {
             </div>
 
             <div className={s.buttonsContainer}>
-                <button
-                    className={s.start}
+                <SuperButton
                     id={'hw9-button-start'}
-                    disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
+                    // disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
-                </button>
-                <button
-                    className={s.stop}
+                </SuperButton>
+                <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
+                    // disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
-                </button>
+                </SuperButton>
             </div>
         </div>
     )
