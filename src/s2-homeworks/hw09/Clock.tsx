@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
-import {restoreState} from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
 
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
-    const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
+    const [date, setDate] = useState<Date>(new Date())
     const [show, setShow] = useState<boolean>(true)
 
     const start = () => {
